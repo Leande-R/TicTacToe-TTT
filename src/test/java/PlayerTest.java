@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-
 import org.example.Player;
 import org.junit.Before;
 import org.junit.Test;

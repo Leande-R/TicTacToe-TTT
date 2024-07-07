@@ -9,7 +9,7 @@ public class Player {
         return marker;
     }
 
-    public void player(char marker) {
+    public void setMarker(char marker) {
         this.marker = marker;
 
 

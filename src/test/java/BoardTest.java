@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-
 import org.example.Board;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +22,7 @@ public class BoardTest {
     public void testPlace() {
         board.place(1, 1, 'O');
         assertFalse(board.isCellEmpty(1, 1));
-        assertEquals('O', board.cells[1][1]);
+        assertEquals('O', board.getCells()[1][1]);
     }
 
     @Test
@@ -36,5 +35,14 @@ public class BoardTest {
     @Test
     public void testPrint() {
         board.print();
+    }
+    public void testIsFull() {
+        assertFalse(board.isFull());
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                board.place(i, j, 'X');
+            }
+        }
+        assertTrue(board.isFull());
     }
 }

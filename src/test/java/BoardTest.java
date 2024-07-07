@@ -35,8 +35,6 @@ public class BoardTest {
 
     @Test
     public void testPrint() {
-        // Da dies die Konsole ausgibt, kann man es nicht einfach testen,
-        // aber man kann überprüfen, ob keine Ausnahme ausgelöst wird.
         board.print();
     }
 }

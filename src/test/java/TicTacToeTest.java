@@ -106,4 +106,14 @@ public class TicTacToeTest {
     @Test
     public void testStartGameAndMakeMove() {
     }
+
+    @Test
+    public void testReset() {
+        game.board.place(0, 0, 'X');
+        game.board.place(0, 1, 'O');
+        game.reset();
+        assertTrue(game.board.isCellEmpty(0, 0));
+        assertTrue(game.board.isCellEmpty(0, 1));
+        assertEquals('X', game.currentPlayer.getMarker());
+    }
 }

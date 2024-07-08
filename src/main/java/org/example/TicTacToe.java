@@ -14,6 +14,11 @@ public class TicTacToe {
         board = new Board();
     }
 
+    public void reset() {
+        board.clear();
+        currentPlayer = player1;
+    }
+
     public void start() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -21,9 +26,16 @@ public class TicTacToe {
             System.out.println("Current Player: " + currentPlayer.getMarker());
             promptMove(scanner);
             if (checkGameOver()) {
-                break;
+                System.out.println("Do you want to play again? (yes/no)");
+                String answer = scanner.next();
+                if (answer.equalsIgnoreCase("yes")) {
+                    reset();
+                } else {
+                    break;
+                }
+            } else {
+                switchCurrentPlayer();
             }
-            switchCurrentPlayer();
         }
         scanner.close();
     }
